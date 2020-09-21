@@ -23,3 +23,5 @@ jobs:
               env:
                 JD_COOKIE: ${{ secrets.JD_COOKIE }}
                 PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                JD_COOKIE_2: ${{ secrets.JD_COOKIE_2 }}
+                JD_COOKIE_3: ${{ secrets.JD_COOKIE_3 }}
