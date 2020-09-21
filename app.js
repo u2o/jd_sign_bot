@@ -12,7 +12,6 @@ const KEY = process.env.JD_COOKIE
 const serverJ = process.env.PUSH_KEY
 const KEY_2 = process.env.JD_COOKIE_2
 const KEY_3 = process.env.JD_COOKIE_3
-const num=1;
 async function downFile () {
     // const url = 'https://cdn.jsdelivr.net/gh/NobyDa/Script@master/JD-DailyBonus/JD_DailyBonus.js'
     const url = 'https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js'
@@ -47,18 +46,12 @@ async function sendNotify (text,desp) {
 }
 
 async function start() {
-  let cc="";
+  let cc="94";
   if (!KEY) {
     console.log('请填写 key 后在继续')
     return
   }
-  if(num==1){
-      cc="94";
-  }else if(num==2){
-      cc="06";
-  }else{
-      cc="90";
-  }
+
   // 下载最新代码
   await downFile();
   console.log('下载代码完毕')
@@ -78,23 +71,66 @@ async function start() {
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
   }
-  if (KEY_2&&num<2) {
-    KEY=KEY_2;
-    console.log('第2个账号开始签到')
-    await start();
-    num++;
-  }else{
-      num++
-      console.log('KEY_2不存在')
+  if (!KEY_2) {
+    console.log('请填写 key 后在继续')
+    return
   }
-  if (KEY_3&&num<3) {
-    KEY=KEY_3;
-    console.log('第3个账号开始签到')
-    await start();
-    num++;
-  }else{
-      console.log('KEY_3不存在')
+  if (!KEY_3) {
+    console.log('请填写 key 后在继续')
+    return
   }
+  
+  
+}
+
+async function start_2() {
+  let cc="06";
+  KEY=KEY_2;
+  if (!KEY) {
+    console.log('请填写 key 后在继续')
+    return
+  }
+  // 替换变量
+  await changeFiele();
+  console.log('替换变量完毕')
+  // 执行
+  await exec("node JD_DailyBonus.js >> result.txt");
+  console.log('执行完毕')
+
+  if (serverJ) {
+    const path = "./result.txt";
+    let content = "";
+    if (fs.existsSync(path)) {
+      content = fs.readFileSync(path, "utf8");
+    }
+    await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
+    console.log('发送结果完毕')
+  }  
+}
+
+async function start_3() {
+  let cc="90";
+  KEY=KEY_3;
+  if (!KEY) {
+    console.log('请填写 key 后在继续')
+    return
+  }
+  // 替换变量
+  await changeFiele();
+  console.log('替换变量完毕')
+  // 执行
+  await exec("node JD_DailyBonus.js >> result.txt");
+  console.log('执行完毕')
+
+  if (serverJ) {
+    const path = "./result.txt";
+    let content = "";
+    if (fs.existsSync(path)) {
+      content = fs.readFileSync(path, "utf8");
+    }
+    await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
+    console.log('发送结果完毕')
+  }  
 }
 
 start()
