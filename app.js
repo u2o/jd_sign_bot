@@ -37,7 +37,6 @@ async function sendNotify (text,desp) {
     headers:{"Content-Type":"application/json ;charset=utf-8 "}
      
   }
-  console.log(options)
   await rp.post(options).then(res=>{
     console.log(res)
   }).catch((err)=>{
