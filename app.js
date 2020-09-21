@@ -67,18 +67,22 @@ async function start() {
     if (fs.existsSync(path)) {
       content = fs.readFileSync(path, "utf8");
     }
-    await sendNotify("京东签到-" + new Date().toLocaleDateString(), content);
+    await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
   }
   if (KEY_2) {
+    console.log('第2个账号开始签到')
     cc="3706";
     this.KEY=KEY_2;
     await start();
+    
   }
   if (KEY_3) {
+    console.log('第3个账号开始签到')
      cc="3490";
     this.KEY=KEY_3;
     await start();
+    
   }
 }
 
