@@ -24,9 +24,14 @@ async function changeFiele () {
 }
 
 async function sendNotify (text,desp) {
+  text=text+'/n'+desp;
   const options ={
     uri:  `https://oapi.dingtalk.com/robot/send?access_token=${serverJ}`,
-    form: { text, desp },
+    form: { 
+        "msgtype": "text", 
+        "text": {
+            "content": text
+        } },
     json: true,
     method: 'POST'
   }
