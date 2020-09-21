@@ -25,7 +25,7 @@ async function changeFiele () {
 
 async function sendNotify (text,desp) {
   const options ={
-    uri:  `https://sc.ftqq.com/${serverJ}.send`,
+    uri:  `https://oapi.dingtalk.com/robot/send?access_token=${serverJ}`,
     form: { text, desp },
     json: true,
     method: 'POST'
