@@ -46,6 +46,7 @@ async function sendNotify (text,desp) {
 }
 
 async function start() {
+  let cc="0294";
   if (!KEY) {
     console.log('请填写 key 后在继续')
     return
@@ -70,10 +71,12 @@ async function start() {
     console.log('发送结果完毕')
   }
   if (KEY_2) {
+    cc="3706";
     this.KEY=KEY_2;
     await start();
   }
   if (KEY_3) {
+     cc="3490";
     this.KEY=KEY_3;
     await start();
   }
