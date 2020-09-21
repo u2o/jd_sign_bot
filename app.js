@@ -73,11 +73,9 @@ async function start() {
   }
   if (KEY_2) {
     await start_2();
-    return
   }
   if (KEY_3) {
     await start_3();
-    return
   }
   
   
