@@ -10,7 +10,7 @@ const download = require('download')
 // 公共变量
 const KEY = process.env.JD_COOKIE
 const serverJ = process.env.PUSH_KEY
-const KEYND = process.env.JD_COOKIEND
+const KEY_2 = process.env.JD_COOKIE_2
 const KEY_3 = process.env.JD_COOKIE_3
 async function downFile () {
     // const url = 'https://cdn.jsdelivr.net/gh/NobyDa/Script@master/JD-DailyBonus/JD_DailyBonus.js'
@@ -70,14 +70,14 @@ async function start() {
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
   }
-  if (KEYND) {
+  if (KEY_2) {
     console.log('第2个账号开始签到')
     cc="3706";
-    this.KEY=KEYND;
+    this.KEY=KEY_2;
     await start();
     
   }else{
-      console.log('KEY_2不存在'+KEYND)
+      console.log('KEY_2不存在')
   }
   if (KEY_3) {
     console.log('第3个账号开始签到')
