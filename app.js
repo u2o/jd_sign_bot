@@ -25,15 +25,13 @@ async function changeFiele () {
 
 async function sendNotify (text,desp) {
   text=text+desp;
-   text.replace(/^\s+/g,"");
-   text.replace('\n',"");
-  console.log('执行完毕+1')
+
   const options ={
     uri:  `https://oapi.dingtalk.com/robot/send?access_token=${serverJ}`,
     json: { 
         "msgtype": "text", 
         "text": {
-            "content": "签到测试"
+            "content": text
         } 
     },
     headers:{"Content-Type":"application/json ;charset=utf-8 "}
