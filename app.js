@@ -10,7 +10,8 @@ const download = require('download')
 // 公共变量
 const KEY = process.env.JD_COOKIE
 const serverJ = process.env.PUSH_KEY
-
+const KEY_2 = process.env.JD_COOKIE_2
+const KEY_3 = process.env.JD_COOKIE_3
 async function downFile () {
     // const url = 'https://cdn.jsdelivr.net/gh/NobyDa/Script@master/JD-DailyBonus/JD_DailyBonus.js'
     const url = 'https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js'
@@ -67,6 +68,14 @@ async function start() {
     }
     await sendNotify("京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
+  }
+  if (KEY_2) {
+    this.KEY=KEY_2;
+    await start();
+  }
+  if (KEY_3) {
+    this.KEY=KEY_3;
+    await start();
   }
 }
 
