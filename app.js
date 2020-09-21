@@ -25,6 +25,7 @@ async function changeFiele () {
 
 async function sendNotify (text,desp) {
   text=text+desp;
+  console.log('执行完毕+1')
   const options ={
     uri:  `https://oapi.dingtalk.com/robot/send?access_token=${serverJ}`,
     form: { 
@@ -35,6 +36,7 @@ async function sendNotify (text,desp) {
     json: true,
     method: 'POST'
   }
+  console.log('执行完毕+2')
   await rp.post(options).then(res=>{
     console.log(res)
   }).catch((err)=>{
