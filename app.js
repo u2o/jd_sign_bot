@@ -6,7 +6,6 @@ const exec = require('child_process').execSync
 const fs = require('fs')
 const rp = require('request-promise')
 const download = require('download')
-var sleep = require('sleep');
 
 // 公共变量
 var KEY = process.env.JD_COOKIE
@@ -47,6 +46,8 @@ async function sendNotify (text,desp) {
   })
 }
 
+function wait(ms) {     return new Promise(resolve = >setTimeout(() = >resolve(), ms)); };
+
 async function start() {
   let cc="94";
   if (!KEY) {
@@ -74,11 +75,11 @@ async function start() {
     console.log('发送结果完毕')
   }
   if (KEY_2) {
-    sleep.sleep(65);
+    await(65000);
     await start_2();
   }
   if (KEY_3) {
-    sleep.sleep(65);
+    await(65000);
     await start_3();
   }
   
