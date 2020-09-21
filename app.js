@@ -71,12 +71,12 @@ async function start() {
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
   }
-  if (!KEY_2) {
-    console.log('请填写 key 后在继续')
+  if (KEY_2) {
+    await start_2();
     return
   }
-  if (!KEY_3) {
-    console.log('请填写 key 后在继续')
+  if (KEY_3) {
+    await start_3();
     return
   }
   
