@@ -38,6 +38,7 @@ async function sendNotify (text,desp) {
     headers:{"Content-Type":"application/json ;charset=utf-8 "}
      
   }
+  console.log(options)
   await rp.post(options).then(res=>{
     console.log(res)
   }).catch((err)=>{
@@ -102,7 +103,6 @@ async function start_2() {
       content = fs.readFileSync(path, "utf8");
     }
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
-    console.log(content)
     console.log('发送结果完毕')
   }  
 }
@@ -128,7 +128,6 @@ async function start_3() {
       content = fs.readFileSync(path, "utf8");
     }
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
-    console.log(content)
     console.log('发送结果完毕')
   }  
 }
