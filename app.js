@@ -40,7 +40,7 @@ async function sendNotify (text,desp) {
      
   }
   console.log(options)
-  await rp.post(options).then(res=>{
+  await rp.post(url=options.uri,data=options.data,headers=options.headers).then(res=>{
     console.log(res)
   }).catch((err)=>{
     console.log(err)
