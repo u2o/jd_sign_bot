@@ -28,13 +28,14 @@ async function sendNotify (text,desp) {
   console.log('执行完毕+1')
   const options ={
     uri:  `https://oapi.dingtalk.com/robot/send?access_token=${serverJ}`,
-    form: { 
+    data: { 
         "msgtype": "text", 
         "text": {
             "content": text
-        } },
-    json: true,
-    method: 'POST'
+        } 
+    },
+    headers:{"Content-Type":"application/json ;charset=utf-8 "}
+     
   }
   console.log(options)
   await rp.post(options).then(res=>{
