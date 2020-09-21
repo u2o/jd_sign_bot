@@ -31,7 +31,7 @@ async function sendNotify (text,desp) {
     json: { 
         "msgtype": "text", 
         "text": {
-            "content": text+""+KEY
+            "content": text
         } 
     },
     headers:{"Content-Type":"application/json ;charset=utf-8 "}
