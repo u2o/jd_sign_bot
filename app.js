@@ -76,6 +76,8 @@ async function start() {
     this.KEY=KEY_2;
     await start();
     
+  }else{
+      console.log('KEY_2不存在')
   }
   if (KEY_3) {
     console.log('第3个账号开始签到')
@@ -83,6 +85,8 @@ async function start() {
     this.KEY=KEY_3;
     await start();
     
+  }else{
+      console.log('KEY_3不存在')
   }
 }
 
