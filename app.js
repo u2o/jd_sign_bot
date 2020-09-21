@@ -46,7 +46,7 @@ async function sendNotify (text,desp) {
   })
 }
 
-function wait(ms) {     return new Promise(resolve = >setTimeout(() = >resolve(), ms)); };
+function wait(ms) {     return new Promise(resolve =>setTimeout(() =>resolve(), ms)); };
 
 async function start() {
   let cc="94";
