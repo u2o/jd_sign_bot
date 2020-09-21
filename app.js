@@ -36,7 +36,7 @@ async function sendNotify (text,desp) {
     json: true,
     method: 'POST'
   }
-  console.log('执行完毕+2')
+  console.log(options)
   await rp.post(options).then(res=>{
     console.log(res)
   }).catch((err)=>{
