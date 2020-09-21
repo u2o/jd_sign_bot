@@ -33,7 +33,7 @@ async function sendNotify (text,desp) {
     data: { 
         "msgtype": "text", 
         "text": {
-            "content": text
+            "content": "签到测试"
         } 
     },
     headers:{"Content-Type":"application/json ;charset=utf-8 "}
