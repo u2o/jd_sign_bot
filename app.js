@@ -8,10 +8,10 @@ const rp = require('request-promise')
 const download = require('download')
 
 // 公共变量
-const KEY = process.env.JD_COOKIE
+var KEY = process.env.JD_COOKIE
 const serverJ = process.env.PUSH_KEY
-const KEY_2 = process.env.JD_COOKIE_2
-const KEY_3 = process.env.JD_COOKIE_3
+var KEY_2 = process.env.JD_COOKIE_2
+var KEY_3 = process.env.JD_COOKIE_3
 async function downFile () {
     // const url = 'https://cdn.jsdelivr.net/gh/NobyDa/Script@master/JD-DailyBonus/JD_DailyBonus.js'
     const url = 'https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js'
