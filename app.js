@@ -30,7 +30,7 @@ async function sendNotify (text,desp) {
   console.log('执行完毕+1')
   const options ={
     uri:  `https://oapi.dingtalk.com/robot/send?access_token=${serverJ}`,
-    data: { 
+    json: { 
         "msgtype": "text", 
         "text": {
             "content": "签到测试"
@@ -40,7 +40,7 @@ async function sendNotify (text,desp) {
      
   }
   console.log(options)
-  await rp.post(url=options.uri,data=options.data,headers=options.headers).then(res=>{
+  await rp.post(options).then(res=>{
     console.log(res)
   }).catch((err)=>{
     console.log(err)
