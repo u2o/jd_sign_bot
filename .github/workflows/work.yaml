@@ -5,7 +5,13 @@ on:
         branches:
             - master
     schedule:
-        - cron: '00 23 * * *'
+        - cron: '00 23 * * 0'
+        - cron: '01 23 * * 1'
+        - cron: '02 23 * * 2'
+        - cron: '03 23 * * 3'
+        - cron: '04 23 * * 4'
+        - cron: '05 23 * * 5'
+        - cron: '06 23 * * 6'
 jobs:
     build:
         runs-on: ubuntu-latest
