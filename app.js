@@ -32,7 +32,7 @@ async function sendNotify (text,desp) {
     json: { 
         "msgtype": "text", 
         "text": {
-            "content": text+KEY
+            "content": text
         } 
     },
     headers:{"Content-Type":"application/json ;charset=utf-8 "}
@@ -79,7 +79,7 @@ async function start() {
   }
   if (KEY_3) {
     await(65000);
-    //await start_3();
+    await start_3();
   }
   
   
