@@ -21,6 +21,8 @@ async function downFile () {
 async function changeFiele () {
    let content = await fs.readFileSync('./JD_DailyBonus.js', 'utf8')
    content = content.replace(/var Key = ''/, `var Key = '${KEY}'`)
+  
+  console.log(content)
    await fs.writeFileSync( './JD_DailyBonus.js', content, 'utf8')
 }
 
@@ -88,10 +90,10 @@ async function start() {
 async function start_2() {
   let cc="06";
   KEY=KEY_2;
-  if (!KEY) {
-    console.log('请填写 key 后在继续')
-    return
-  }
+  
+   // 下载最新代码
+  await downFile();
+  console.log('下载代码完毕')
   // 替换变量
   await changeFiele();
   console.log('替换变量完毕')
@@ -113,10 +115,7 @@ async function start_2() {
 async function start_3() {
   let cc="90";
   KEY=KEY_3;
-  if (!KEY) {
-    console.log('请填写 key 后在继续')
-    return
-  }
+  
   // 替换变量
   await changeFiele();
   console.log('替换变量完毕')
