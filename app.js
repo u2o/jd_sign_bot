@@ -69,6 +69,7 @@ async function start() {
     let content = "";
     if (fs.existsSync(path)) {
       content = fs.readFileSync(path, "utf8");
+      fs.writeFile(path, '', function(){console.log('done')})
     }
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
@@ -104,6 +105,7 @@ async function start_2() {
     let content = "";
     if (fs.existsSync(path)) {
       content = fs.readFileSync(path, "utf8");
+      fs.writeFile(path, '', function(){console.log('done')})
     }
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
@@ -128,6 +130,7 @@ async function start_3() {
     let content = "";
     if (fs.existsSync(path)) {
       content = fs.readFileSync(path, "utf8");
+      fs.writeFile(path, '', function(){console.log('done')})
     }
     await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
     console.log('发送结果完毕')
