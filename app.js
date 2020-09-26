@@ -80,11 +80,11 @@ async function start() {
     
   }
   if (KEY_2) {
-    await(65000);
+    //await(65000);
     //await start_2();
   }
   if (KEY_3) {
-    await(65000);
+    //await(65000);
     //await start_3();
   }
   
