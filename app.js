@@ -71,8 +71,13 @@ async function start() {
       content = fs.readFileSync(path, "utf8");
       fs.writeFile(path, '', function(){console.log('done')})
     }
-    await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
-    console.log('发送结果完毕')
+    if(content.indexOf("京东商城-京豆签到成功") != -1){
+       console.log('京东签到成功！')
+    }else{
+        await sendNotify(cc+"京东签到失败-" + new Date().toLocaleDateString(), content);
+        console.log('京东签到异常，发送结果完毕')
+    }
+    
   }
   if (KEY_2) {
     await(65000);
@@ -107,8 +112,12 @@ async function start_2() {
       content = fs.readFileSync(path, "utf8");
       fs.writeFile(path, '', function(){console.log('done')})
     }
-    await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
-    console.log('发送结果完毕')
+    if(content.indexOf("京东商城-京豆签到成功") != -1){
+       console.log('京东签到成功！')
+    }else{
+        await sendNotify(cc+"京东签到失败-" + new Date().toLocaleDateString(), content);
+        console.log('京东签到异常，发送结果完毕')
+    }
   }  
 }
 
@@ -132,8 +141,12 @@ async function start_3() {
       content = fs.readFileSync(path, "utf8");
       fs.writeFile(path, '', function(){console.log('done')})
     }
-    await sendNotify(cc+"京东签到-" + new Date().toLocaleDateString(), content);
-    console.log('发送结果完毕')
+    if(content.indexOf("京东商城-京豆签到成功") != -1){
+       console.log('京东签到成功！')
+    }else{
+        await sendNotify(cc+"京东签到失败-" + new Date().toLocaleDateString(), content);
+        console.log('京东签到异常，发送结果完毕')
+    }
   }  
 }
 
